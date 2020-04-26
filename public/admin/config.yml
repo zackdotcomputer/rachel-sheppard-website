@@ -12,6 +12,17 @@ media_folder: public/img
 public_folder: /img
 
 collections:
+  - name: "config"
+    label: "Site Config"
+    files:
+      - file: "content/siteconfig.md"
+        label: "Site Settings"
+        name: "siteconfig"
+        fields:
+          - { label: "Site Title", name: title, widget: string }
+          - { label: "Footer Text", name: footer, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: "Site Description", name: description, widget: string }
   - name: "content"
     label: "Pages"
     files:
@@ -20,10 +31,6 @@ collections:
         name: "index"
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page" }
-          - { label: "Site Title", name: title, widget: string }
-          - { label: "Footer Text", name: footer, widget: string }
-          - { label: Email, name: email, widget: string }
-          - { label: "Site Description", name: description, widget: string }
           - {
               label: Intro,
               name: intro,

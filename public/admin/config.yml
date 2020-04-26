@@ -15,7 +15,7 @@ collections:
   - name: "content"
     label: "Pages"
     files:
-      - file: "src/content/index.md"
+      - file: "content/index.md"
         label: "Homepage"
         name: "index"
         fields:
@@ -53,7 +53,7 @@ collections:
                   { label: "Image", name: "image", widget: "image", required: true },
                 ],
             }
-      - file: "src/content/research/index.md"
+      - file: "content/research/index.md"
         label: "Research"
         name: "research"
         fields:
@@ -77,7 +77,7 @@ collections:
                 ],
             }
 
-      - file: "src/content/publications/index.md"
+      - file: "content/publications/index.md"
         label: "Publications"
         name: "publications"
         fields:
@@ -102,7 +102,7 @@ collections:
                 ],
             }
 
-      - file: "src/content/cv/index.md"
+      - file: "content/cv/index.md"
         label: "CV"
         name: "cv"
         fields:

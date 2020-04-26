@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Manrope|Martel&display=swap");
+
+$font-family-sans-serif: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+$headings-font-family: "Martel", serif;
+
+$font-size-base: 1.25rem;
+
+$dark: black;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

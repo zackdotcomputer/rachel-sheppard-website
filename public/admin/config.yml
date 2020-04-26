@@ -20,7 +20,7 @@ collections:
         name: "siteconfig"
         fields:
           - { label: "Site Title", name: title, widget: string }
-          - { label: "Footer Text", name: footer, widget: string }
+          - { label: "Footer Text", name: footer, widget: markdown }
           - { label: Email, name: email, widget: string }
           - { label: "Site Description", name: description, widget: string }
   - name: "content"

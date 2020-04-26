@@ -1,25 +1,21 @@
-import Head from "next/head";
-import { AppProps } from "next/app";
-import "../styles/global.scss";
-import { attributes } from "../content/siteconfig.md";
-import Layout from "../components/Layout";
-
-interface ConfigSettings {
-  title?: string;
-  footer?: string;
-  email?: string;
-  description?: string;
+if (typeof window !== "undefined") {
+  require("jquery");
+  require("popper.js");
+  require("bootstrap");
 }
+import "../styles/global.scss";
+
+import { AppProps } from "next/app";
+import PageLayout from "../components/PageLayout";
+import SiteSettingsContext, { useSiteContextValues } from "../components/SiteSettingsContext";
 
 export default function RachelApp({ Component, pageProps }: AppProps) {
-  const { title, footer, email, description } = attributes as ConfigSettings;
-
+  const contextValues = useSiteContextValues();
   return (
-    <Layout siteTitle={title ?? "Untitled"} footerText={footer} email={email}>
-      <Head>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      </Head>
-      <Component {...pageProps} siteTitle={title} siteDescription={description} />
-    </Layout>
+    <SiteSettingsContext.Provider value={contextValues}>
+      <PageLayout>
+        <Component {...pageProps} />
+      </PageLayout>
+    </SiteSettingsContext.Provider>
   );
 }

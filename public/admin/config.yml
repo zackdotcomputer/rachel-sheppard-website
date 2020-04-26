@@ -19,10 +19,10 @@ collections:
         label: "Site Settings"
         name: "siteconfig"
         fields:
-          - { label: "Site Title", name: title, widget: string }
-          - { label: "Footer Text", name: footer, widget: markdown }
-          - { label: Email, name: email, widget: string }
-          - { label: "Site Description", name: description, widget: string }
+          - { label: "Site Title", name: title, widget: string, required: true }
+          - { label: "Footer Text", name: footer, widget: markdown, required: true }
+          - { label: Email, name: email, widget: string, required: false }
+          - { label: "Site Description", name: description, widget: string, required: false }
   - name: "content"
     label: "Pages"
     files:
@@ -35,16 +35,17 @@ collections:
               label: Intro,
               name: intro,
               widget: object,
+              required: true
               fields:
                 [
-                  { label: Image, name: image, widget: image },
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: markdown },
+                  { label: Image, name: image, widget: image, required: true },
+                  { label: Heading, name: heading, widget: string, required: false },
+                  { label: Description, name: description, widget: markdown, required: false },
                   {
                     label: "Include Contact",
                     name: includeContact,
                     widget: boolean,
-                    default: true,
+                    default: true
                   },
                 ],
             }
@@ -56,7 +57,7 @@ collections:
                 [
                   { label: "Title", name: "title", widget: "string", required: true },
                   { label: "Add Date", name: "date", widget: "datetime", required: true },
-                  { label: "Description", name: "description", widget: "text" },
+                  { label: "Description", name: "description", widget: "text", required: false },
                   { label: "Image", name: "image", widget: "image", required: true },
                 ],
             }
@@ -70,7 +71,7 @@ collections:
               widget: "hidden",
               default: "research-page",
             }
-          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Page Title", name: "title", widget: "string", required: true }
           - {
               label: "Research Projects",
               name: research-projects,
@@ -78,8 +79,8 @@ collections:
               fields:
                 [
                   { label: Title, name: title, widget: string, required: true },
-                  { label: Dates, name: dates, widget: string },
-                  { label: Description, name: description, widget: text },
+                  { label: Dates, name: dates, widget: string, required: false },
+                  { label: Description, name: description, widget: text, required: false },
                   { label: Image, name: image, widget: image, required: true },
                 ],
             }
@@ -94,18 +95,19 @@ collections:
               widget: "hidden",
               default: "publications-page",
             }
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Google Scholar Link", name: "scholar-link", widget: "string" }
+          - { label: "Page Title", name: "title", widget: "string", required: true }
+          - { label: "Google Scholar Link", name: "scholar-link", widget: "string", required: false }
           - {
               label: "Featured Publications",
               name: publications-projects,
               widget: list,
+              required: false,
               fields:
                 [
                   { label: Title, name: title, widget: string, required: true },
-                  { label: Authors, name: authors, widget: text },
-                  { label: Description, name: description, widget: text },
-                  { label: "File Copy", name: file-copy, widget: file },
+                  { label: Authors, name: authors, widget: text, required: false },
+                  { label: Description, name: description, widget: text, required: false },
+                  { label: "File Copy", name: file-copy, widget: file, required: false },
                 ],
             }
 
@@ -114,8 +116,8 @@ collections:
         name: "cv"
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "cv-page" }
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "PDF Copy", name: "cv-pdf", widget: "file" }
+          - { label: "Page Title", name: "title", widget: "string", required: true }
+          - { label: "PDF Copy", name: "cv-pdf", widget: "file", required: false }
           - {
               label: "CV Blocks",
               name: cv-blocks,
@@ -138,16 +140,12 @@ collections:
                         "leaf",
                         "lovehand",
                       ],
+                    required: true,
                   },
                   { label: Title, name: title, widget: string, required: true },
-                  { label: Dates, name: dates, widget: string },
-                  { label: Caveat, name: caveat, widget: string },
-                  { label: Text, name: text, widget: text },
-                  {
-                    label: Bullets,
-                    name: bullets,
-                    widget: list,
-                    fields: [{ label: Contents, name: contents, widget: text, required: true }],
-                  },
+                  { label: Dates, name: dates, widget: string, required: false },
+                  { label: Caveat, name: caveat, widget: string, required: false },
+                  { label: Text, name: text, widget: text, required: false },
+                  { label: Bullets, name: bullets, widget: list, required: false },
                 ],
             }

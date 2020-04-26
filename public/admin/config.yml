@@ -35,7 +35,7 @@ collections:
               label: Intro,
               name: intro,
               widget: object,
-              required: true
+              required: true,
               fields:
                 [
                   { label: Image, name: image, widget: image, required: true },
@@ -45,7 +45,7 @@ collections:
                     label: "Include Contact",
                     name: includeContact,
                     widget: boolean,
-                    default: true
+                    default: true,
                   },
                 ],
             }
@@ -96,7 +96,12 @@ collections:
               default: "publications-page",
             }
           - { label: "Page Title", name: "title", widget: "string", required: true }
-          - { label: "Google Scholar Link", name: "scholar-link", widget: "string", required: false }
+          - {
+              label: "Google Scholar Link",
+              name: "scholar-link",
+              widget: "string",
+              required: false,
+            }
           - {
               label: "Featured Publications",
               name: publications-projects,

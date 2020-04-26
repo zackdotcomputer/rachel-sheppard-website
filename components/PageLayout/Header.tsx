@@ -30,8 +30,12 @@ export default function Header() {
 
   return (
     <header>
-      <div className="container">
-        <h1>{state?.siteTitle}</h1>
+      <div className="container logotype">
+        <Link href="/">
+          <a>
+            <h1>{state?.siteTitle}</h1>
+          </a>
+        </Link>
       </div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container">

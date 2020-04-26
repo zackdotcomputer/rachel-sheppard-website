@@ -1,24 +1,7 @@
-import { attributes, react as HomeContent } from "../content/home.md";
+import { attributes } from "../content/index.md";
+import HomeContents from "../components/PageContents/Home/Template";
 
 export default function Home() {
-  let { title, cats } = attributes as {
-    title: string;
-    cats: [{ name: string; description: string }];
-  };
-  return (
-    <>
-      <article>
-        <h1>{title}</h1>
-        <HomeContent />
-        <ul>
-          {cats.map((cat, k) => (
-            <li key={k}>
-              <h2>{cat.name}</h2>
-              <p>{cat.description}</p>
-            </li>
-          ))}
-        </ul>
-      </article>
-    </>
-  );
+  console.debug(attributes);
+  return <HomeContents {...attributes} />;
 }

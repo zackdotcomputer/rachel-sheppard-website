@@ -6,7 +6,7 @@ intro:
     interaction and distinguishing surface and subsurface processes.
   heading: About Me
   image: /img/zzz08588.jpeg
+  imagealt: Rachel in the forest
   includeContact: true
 featured: []
 ---
-

@@ -1,0 +1,23 @@
+.AboutIntro {
+  :global(.row) {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .FeaturedImage {
+    max-width: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  h1 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-weight: 400;
+    max-width: 600px;
+  }
+}

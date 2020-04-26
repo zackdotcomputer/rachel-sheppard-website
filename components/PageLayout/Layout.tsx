@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 export default function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
-    <div>
+    <div className="rachel">
       <HeadTags />
       <Header />
       {children}

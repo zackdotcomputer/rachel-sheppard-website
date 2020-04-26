@@ -1,4 +1,4 @@
 [[headers]]
-for = "/static/*"
+for = "/images/*"
 [headers.values]
 Cache-Control = "public, max-age=360000"

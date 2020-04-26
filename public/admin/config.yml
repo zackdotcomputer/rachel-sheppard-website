@@ -1,0 +1,146 @@
+backend:
+  name: git-gateway
+  branch: master
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
+
+media_folder: public/img
+public_folder: /img
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Homepage"
+        name: "index"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page" }
+          - { label: "Site Title", name: title, widget: string }
+          - { label: "Footer Text", name: footer, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: "Site Description", name: description, widget: string }
+          - {
+              label: Intro,
+              name: intro,
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Heading, name: heading, widget: string },
+                  { label: Description, name: description, widget: markdown },
+                  {
+                    label: "Include Contact",
+                    name: includeContact,
+                    widget: boolean,
+                    default: true,
+                  },
+                ],
+            }
+          - {
+              label: Featured,
+              name: featured,
+              width: list,
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string", required: true },
+                  { label: "Add Date", name: "date", widget: "datetime", required: true },
+                  { label: "Description", name: "description", widget: "text" },
+                  { label: "Image", name: "image", widget: "image", required: true },
+                ],
+            }
+      - file: "src/pages/research/index.md"
+        label: "Research"
+        name: "research"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "research-page",
+            }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - {
+              label: "Research Projects",
+              name: research-projects,
+              widget: list,
+              fields:
+                [
+                  { label: Title, name: title, widget: string, required: true },
+                  { label: Dates, name: dates, widget: string },
+                  { label: Description, name: description, widget: text },
+                  { label: Image, name: image, widget: image, required: true },
+                ],
+            }
+
+      - file: "src/pages/publications/index.md"
+        label: "Publications"
+        name: "publications"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "publications-page",
+            }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Google Scholar Link", name: "scholar-link", widget: "string" }
+          - {
+              label: "Featured Publications",
+              name: publications-projects,
+              widget: list,
+              fields:
+                [
+                  { label: Title, name: title, widget: string, required: true },
+                  { label: Authors, name: authors, widget: text },
+                  { label: Description, name: description, widget: text },
+                  { label: "File Copy", name: file-copy, widget: file },
+                ],
+            }
+
+      - file: "src/pages/cv/index.md"
+        label: "CV"
+        name: "cv"
+        fields:
+          - { label: "Template Key", name: "templateKey", widget: "hidden", default: "cv-page" }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "PDF Copy", name: "cv-pdf", widget: "file" }
+          - {
+              label: "CV Blocks",
+              name: cv-blocks,
+              widget: list,
+              fields:
+                [
+                  {
+                    label: Icon,
+                    name: icon,
+                    widget: select,
+                    options:
+                      [
+                        "cv",
+                        "trophy",
+                        "magnifier",
+                        "mountain",
+                        "microphone",
+                        "handshake",
+                        "teacher",
+                        "leaf",
+                        "lovehand",
+                      ],
+                  },
+                  { label: Title, name: title, widget: string, required: true },
+                  { label: Dates, name: dates, widget: string },
+                  { label: Caveat, name: caveat, widget: string },
+                  { label: Text, name: text, widget: text },
+                  {
+                    label: Bullets,
+                    name: bullets,
+                    widget: list,
+                    fields: [{ label: Contents, name: contents, widget: text, required: true }],
+                  },
+                ],
+            }

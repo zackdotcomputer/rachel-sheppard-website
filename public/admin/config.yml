@@ -55,13 +55,8 @@ collections:
               widget: list,
               fields:
                 [
-                  { label: "Title", name: "title", widget: "string", required: true },
-                  {
-                    label: "Description",
-                    name: "description",
-                    widget: "markdown",
-                    required: false,
-                  },
+                  { label: "Title", name: "title", widget: "string", required: false },
+                  { label: "Description", name: "description", widget: "markdown", required: true },
                   { label: "Image", name: "image", widget: "image", required: true },
                 ],
             }

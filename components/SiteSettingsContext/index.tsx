@@ -8,7 +8,7 @@ import { attributes, react } from "../../content/siteconfig.md";
 const siteConfig = attributes as SiteSettings;
 siteConfig.title = siteConfig.title ?? "Untitled";
 siteConfig.siteTitle = siteConfig.title;
-siteConfig.footer = react;
+siteConfig.footer = attributes.footer ?? react;
 
 function reducer(state: SiteSettings, action: SiteSettingsActions): SiteSettings {
   if (action.type === "SetPageTitleAction") {

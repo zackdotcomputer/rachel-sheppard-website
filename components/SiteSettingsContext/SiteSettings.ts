@@ -1,5 +1,5 @@
 export type SiteSettings = {
-  footer?: React.JSXElementConstructor<{}>;
+  footer?: string | React.JSXElementConstructor<{}>;
   email?: string;
   title: string;
   siteTitle: string;

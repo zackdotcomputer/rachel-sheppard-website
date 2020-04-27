@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer>
       <hr />
-      {state?.footer}
+      <div className="container text-center mb-3">{state?.footer}</div>
     </footer>
   );
 }

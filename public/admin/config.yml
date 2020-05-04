@@ -95,23 +95,18 @@ collections:
               default: "publications-page",
             }
           - { label: "Page Title", name: "title", widget: "string", required: true }
-          - {
-              label: "Google Scholar Link",
-              name: "scholar-link",
-              widget: "string",
-              required: false,
-            }
+          - { label: "Google Scholar Link", name: "scholarLink", widget: "string", required: false }
           - {
               label: "Featured Publications",
-              name: publications-projects,
+              name: publicationsProjects,
               widget: list,
               required: false,
               fields:
                 [
                   { label: Title, name: title, widget: string, required: true },
                   { label: Authors, name: authors, widget: text, required: false },
-                  { label: Description, name: description, widget: text, required: false },
-                  { label: "File Copy", name: file-copy, widget: file, required: false },
+                  { label: Description, name: description, widget: markdown, required: false },
+                  { label: "File Copy", name: fileCopy, widget: file, required: false },
                 ],
             }
 

@@ -10,26 +10,24 @@ import FeaturedPost from "./Post";
 export default function FeaturedSection({ posts }: { posts: Featured[] }) {
   const [selectedModalIndex, setModalIndex] = useState<number | undefined>(undefined);
 
-  // NOTE(zack): Because of the bug linked below, we have to memoize on client only.
-  // https://github.com/facebook/react/issues/16416
-  let carouselContents;
-  if (typeof window === "undefined") {
-    carouselContents = posts.map((p) => {
+  const renderPosts = (ps: Featured[]) => {
+    return (ps ?? []).map((p) => {
       const caption: string = ReactDOMServer.renderToString(<FeaturedCaption {...p} />);
       return {
         caption,
         source: p.image
       };
     });
+  };
+
+  // NOTE(zack): Because of the bug linked below, we have to memoize on client only.
+  // https://github.com/facebook/react/issues/16416
+  let carouselContents;
+  if (typeof window === "undefined") {
+    carouselContents = renderPosts(posts);
   } else {
     carouselContents = useMemo(() => {
-      return posts.map((p) => {
-        const caption: string = ReactDOMServer.renderToString(<FeaturedCaption {...p} />);
-        return {
-          caption,
-          source: p.image
-        };
-      });
+      return renderPosts(posts);
     }, [posts]);
   }
 

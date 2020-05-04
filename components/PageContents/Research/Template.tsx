@@ -8,7 +8,7 @@ export default function Research({ title, researchProjects }: ResearchProps) {
     <div className={styles.Research}>
       <HeadlineBlock title={title} className={styles.ResearchHero} />
       <section className="container">
-        {researchProjects.map((project, i) => (
+        {(researchProjects ?? []).map((project, i) => (
           <ResearchProjectRow key={`project-${i}`} {...project} />
         ))}
       </section>

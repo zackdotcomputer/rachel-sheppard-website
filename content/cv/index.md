@@ -1,2 +1,3 @@
 ---
+title: Curriculum VitÆ
 ---

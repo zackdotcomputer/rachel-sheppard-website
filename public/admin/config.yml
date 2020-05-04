@@ -116,10 +116,10 @@ collections:
         fields:
           - { label: "Template Key", name: "templateKey", widget: "hidden", default: "cv-page" }
           - { label: "Page Title", name: "title", widget: "string", required: true }
-          - { label: "PDF Copy", name: "cv-pdf", widget: "file", required: false }
+          - { label: "PDF Copy", name: "cvPDF", widget: "file", required: false }
           - {
               label: "CV Blocks",
-              name: cv-blocks,
+              name: cvBlocks,
               widget: list,
               fields:
                 [
@@ -145,6 +145,5 @@ collections:
                   { label: Dates, name: dates, widget: string, required: false },
                   { label: Caveat, name: caveat, widget: string, required: false },
                   { label: Text, name: text, widget: text, required: false },
-                  { label: Bullets, name: bullets, widget: list, required: false },
                 ],
             }

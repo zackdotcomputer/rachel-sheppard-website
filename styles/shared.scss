@@ -1,0 +1,26 @@
+@use "./bootstrap/zero" as bootstrap;
+
+@mixin hero() {
+  max-height: 400px;
+  height: 30vw;
+  min-height: 80px;
+
+  :global(.container) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+  }
+
+  h1 {
+    @include bootstrap.make-col-ready();
+    @include bootstrap.make-col(12);
+
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+  }
+}

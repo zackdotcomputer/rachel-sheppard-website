@@ -1,15 +1,15 @@
-import styles from "../../../styles/research.module.scss";
+import styles from "../../../styles/publications.module.scss";
 import HeadlineBlock from "../shared/HeadlineBlock";
 import { PublicationProps } from "./Props";
 import PublicationRow from "./PublicationRow";
 
 export default function Research({ title, publicationsProjects, scholarLink }: PublicationProps) {
   return (
-    <div className={styles.Research}>
+    <div className={styles.Publications}>
       <HeadlineBlock
         title={title}
         link={scholarLink ? { link: scholarLink, title: "Google Scholar" } : undefined}
-        className={styles.ResearchHero}
+        className={styles.PubHero}
       />
       <section className="container">
         {(publicationsProjects ?? []).map((pub, i) => (

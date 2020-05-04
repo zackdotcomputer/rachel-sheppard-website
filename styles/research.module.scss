@@ -1,32 +1,16 @@
 @use "./bootstrap/zero" as bootstrap;
+@use "./shared" as shared;
 
 .ResearchHero {
-  max-height: 400px;
-  height: 30vw;
-  min-height: 80px;
+  @include shared.hero;
 
-  background-image: url("/img/zigzags.jpg");
+  background-color: black;
+  background-image: url("/img/gem.jpg");
   background-position: center;
-  background-repeat: repeat;
-
-  :global(.container) {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    height: 100%;
-  }
+  background-size: cover;
 
   h1 {
-    @include bootstrap.make-col-ready();
-    @include bootstrap.make-col(12);
-
-    text-align: center;
-    color: black;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: bold;
+    color: white;
   }
 }
 

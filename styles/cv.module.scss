@@ -1,10 +1,10 @@
 @use "./bootstrap/zero" as bootstrap;
 @use "./shared" as shared;
 
-.PubHero {
+.CVHero {
   @include shared.hero;
 
-  background-image: url("/img/zigzags.jpg");
+  background-image: url("/img/flowers.jpg");
   background-position: center;
   background-repeat: repeat;
 }

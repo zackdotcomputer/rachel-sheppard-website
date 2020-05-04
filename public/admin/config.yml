@@ -104,8 +104,7 @@ collections:
               fields:
                 [
                   { label: Title, name: title, widget: string, required: true },
-                  { label: Authors, name: authors, widget: text, required: false },
-                  { label: Description, name: description, widget: markdown, required: false },
+                  { label: Authors, name: authors, widget: markdown, required: false },
                   { label: "File Copy", name: fileCopy, widget: file, required: false },
                 ],
             }

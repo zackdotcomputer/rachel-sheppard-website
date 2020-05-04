@@ -1,6 +1,8 @@
 @use "./bootstrap/zero" as bootstrap;
 
 .AboutIntro {
+  margin-top: 2rem;
+
   :global(.row) {
     text-align: center;
     justify-content: center;

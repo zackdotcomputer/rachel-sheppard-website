@@ -2,13 +2,23 @@
 
 $font-family-sans-serif: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol", "Noto Color Emoji" !default;
+  "Segoe UI Symbol", "Noto Color Emoji";
 
 $headings-font-family: "Martel", serif;
 
-$font-size-base: 1.25rem;
+$font-size-base: 1rem;
+$font-size-large: $font-size-base * 1.25;
+
+$line-height-base: 1.6;
 
 $dark: black;
+
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-large;
+$h5-font-size: $font-size-base;
+$h6-font-size: 1rem;
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";

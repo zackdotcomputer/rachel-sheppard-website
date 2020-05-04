@@ -73,13 +73,13 @@ collections:
           - { label: "Page Title", name: "title", widget: "string", required: true }
           - {
               label: "Research Projects",
-              name: research-projects,
+              name: researchProjects,
               widget: list,
               fields:
                 [
                   { label: Title, name: title, widget: string, required: true },
                   { label: Dates, name: dates, widget: string, required: false },
-                  { label: Description, name: description, widget: text, required: false },
+                  { label: Description, name: description, widget: markdown, required: false },
                   { label: Image, name: image, widget: image, required: true },
                 ],
             }

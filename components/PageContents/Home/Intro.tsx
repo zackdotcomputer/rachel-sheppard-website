@@ -26,10 +26,8 @@ export default function HomeIntro(intro: Intro) {
       <div className="row">
         <h1>{intro.heading}</h1>
       </div>
-      <div className="row">
-        <p>
-          <ReactMarkdown source={intro.description} />
-        </p>
+      <div className="row large">
+        <ReactMarkdown source={intro.description} />
       </div>
       {intro.includeContact && state?.email && <GetInTouch email={state.email} />}
     </section>

@@ -1,6 +1,6 @@
 ---
 title: Research
-research-projects:
+researchProjects:
   - dates: 2019-Present
     description: >-
       Using a small atmospheric chamber attached to an FTIR spectrometer, I am
@@ -17,7 +17,7 @@ research-projects:
       and geological indicators through time  can inform our understanding of
       water conditions in Lake Gale.
     image: /img/gale-chemostrat.jpg
-    title: CHEMOSTRATIGRAPHY OF GALE CRATER
+    title: Chemostratigraphy of Gale Crater
   - dates: 2018-2020
     description: >-
       Using CRISM images processed using a new technique by our coauthors, we
@@ -26,6 +26,5 @@ research-projects:
       stratigraphic relationships and how they vary laterally can help constrain
       the crater's history, both during its lacustrine phase and long after.
     image: /img/mt-sharp.jpg
-    title: MINERALOGY AND STRATIGRAPHY OF MT. SHARP
+    title: Mineralogy and Stratigraphy of Mt. Sharp
 ---
-

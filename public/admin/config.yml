@@ -141,8 +141,7 @@ collections:
                     required: true,
                   },
                   { label: Title, name: title, widget: string, required: true },
-                  { label: Dates, name: dates, widget: string, required: false },
                   { label: Caveat, name: caveat, widget: string, required: false },
-                  { label: Text, name: text, widget: text, required: false },
+                  { label: Text, name: text, widget: markdown, required: false },
                 ],
             }

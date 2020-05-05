@@ -16,13 +16,36 @@
 
 .ResearchSection {
   @include bootstrap.make-row();
-  min-height: 85vh;
+  min-height: 100vw;
   align-items: center;
+
+  @include bootstrap.media-breakpoint-up(md) {
+    max-height: 90vh;
+
+    hr {
+      display: none;
+    }
+  }
+
+  hr {
+    @include bootstrap.make-col(12);
+    margin-bottom: 3rem;
+
+    order: 4;
+  }
+
+  &:last-child hr {
+    display: none;
+  }
 
   .Image,
   .Contents {
     @include bootstrap.make-col-ready;
     @include bootstrap.make-col(6);
+
+    @include bootstrap.media-breakpoint-down(sm) {
+      @include bootstrap.make-col(12);
+    }
   }
 
   .Contents {
@@ -35,7 +58,9 @@
     }
   }
 
-  &:nth-child(even) .Image {
-    order: 3;
+  @include bootstrap.media-breakpoint-up(md) {
+    &:nth-child(even) .Image {
+      order: 3;
+    }
   }
 }

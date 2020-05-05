@@ -1,4 +1,5 @@
 import classnames from "classnames";
+import RoundButton from "./RoundButton";
 
 interface Props {
   title: string;
@@ -10,14 +11,14 @@ export default function HeadlineBlock({ title, className, link }: Props) {
   return (
     <section className={className}>
       <div className="container">
-        <h1>{title}</h1>
-        {link && (
-          <div>
-            <a href={link.link} className={classnames("btn", "btn-outline-dark")}>
-              {link.title}
-            </a>
-          </div>
-        )}
+        <div className={classnames("headline-block")}>
+          <h1>{title}</h1>
+          {link && (
+            <div>
+              <RoundButton href={link.link}>{link.title}</RoundButton>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

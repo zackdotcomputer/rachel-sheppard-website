@@ -128,7 +128,7 @@ collections:
                     widget: select,
                     options:
                       [
-                        "cv",
+                        "diploma",
                         "trophy",
                         "magnifier",
                         "mountain",

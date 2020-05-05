@@ -1,5 +1,5 @@
-export enum CVIcon {
-  cv = "cv",
+export enum IconType {
+  diploma = "diploma",
   trophy = "trophy",
   magnifier = "magnifier",
   mountain = "mountain",
@@ -11,9 +11,8 @@ export enum CVIcon {
 }
 
 export interface CVBlock {
-  icon: CVIcon;
+  icon: IconType;
   title: string;
-  dates?: string;
   caveat?: string;
   text?: string;
 }

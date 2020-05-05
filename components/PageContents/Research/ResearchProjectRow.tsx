@@ -13,6 +13,7 @@ export default function ResearchProjectRow({ image, title, description, dates }:
         {dates && <h5>{dates}</h5>}
         {description && <ReactMarkdown source={description} />}
       </div>
+      <hr />
     </article>
   );
 }

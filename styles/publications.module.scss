@@ -8,3 +8,34 @@
   background-position: center;
   background-repeat: repeat;
 }
+
+.PublicationRow {
+  @include bootstrap.make-row;
+
+  .Contents {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    @include bootstrap.make-col-ready;
+    @include bootstrap.make-col(12);
+
+    @include bootstrap.media-breakpoint-only(lg) {
+      @include bootstrap.make-col(10);
+      @include bootstrap.make-col-offset(1);
+    }
+
+    @include bootstrap.media-breakpoint-only(xl) {
+      @include bootstrap.make-col(8);
+      @include bootstrap.make-col-offset(2);
+    }
+
+    h3 {
+      line-height: 1.4;
+    }
+
+    & > * {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+}

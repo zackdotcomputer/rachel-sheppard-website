@@ -1,7 +1,8 @@
 ---
 title: Curriculum VitÆ
+cvPDF: /img/rachel-sheppard-cv.pdf
 cvBlocks:
-  - icon: cv
+  - icon: diploma
     text: >-
       Department of Earth, Environmental, and Planetary Sciences. Advisor Ralph
       Milliken.
@@ -9,7 +10,7 @@ cvBlocks:
 
       * Dissertation: _Spatial and temporal variations in the chemistry and
       mineralogy of mafic lacustrine systems on Earth and Mars_
-    title: 'PH.D., BROWN UNIVERSITY, 2020'
+    title: "PH.D., BROWN UNIVERSITY, 2020"
   - icon: trophy
     text: >-
       * **2019 Sigma Xi**, Full Member, Brown University.
@@ -86,4 +87,3 @@ cvBlocks:
       Francisco, CA.
     title: SELECTED FIRST AUTHOR PRESENTATIONS
 ---
-

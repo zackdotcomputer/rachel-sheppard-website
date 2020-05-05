@@ -1,7 +1,6 @@
 export interface Publication {
   title: string;
   authors?: string;
-  description?: string;
   fileCopy?: string;
 }
 

@@ -6,7 +6,7 @@ export default function GetInTouch({ email }: { email: string }) {
     <div className="row">
       <a
         href={`mailto:${email}`}
-        className={classnames("btn", "btn-outline-dark", styles.GetInTouch)}
+        className={classnames("btn", "btn-outline-dark", "btn-round", styles.GetInTouch)}
       >
         Get in Touch
       </a>

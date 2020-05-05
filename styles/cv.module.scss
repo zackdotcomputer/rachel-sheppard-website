@@ -8,3 +8,52 @@
   background-position: center;
   background-repeat: repeat;
 }
+
+.CVBlock {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  .Icon {
+    @include bootstrap.make-col-ready;
+    @include bootstrap.make-col(1);
+
+    @include bootstrap.media-breakpoint-down(sm) {
+      @include bootstrap.make-col(12);
+    }
+
+    @include bootstrap.media-breakpoint-only(xl) {
+      @include bootstrap.make-col-offset(1);
+    }
+
+    text-align: left;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+
+    :global(.svg-inline--fa) {
+      height: 35px;
+      width: 35px;
+      object-fit: contain;
+    }
+  }
+
+  .Caveat {
+    font-style: italic;
+    font-size: bootstrap.$font-size-sm;
+  }
+
+  .Contents {
+    @include bootstrap.make-col-ready;
+    @include bootstrap.make-col(11);
+
+    @include bootstrap.media-breakpoint-only(xl) {
+      @include bootstrap.make-col(9);
+    }
+
+    padding-top: 0.25rem;
+
+    & > ul > li {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+  }
+}

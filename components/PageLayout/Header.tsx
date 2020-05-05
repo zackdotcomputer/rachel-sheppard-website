@@ -1,7 +1,7 @@
 import classnames from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import SiteSettingsContext from "../SiteSettingsContext";
 
 export default function Header() {
@@ -28,6 +28,8 @@ export default function Header() {
 
   const { state } = useContext(SiteSettingsContext);
 
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <header>
       <div className="container logotype">
@@ -42,22 +44,31 @@ export default function Header() {
           <button
             className="navbar-toggler"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbarNav"
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            onClick={() => {
+              setIsExpanded(!isExpanded);
+            }}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse mr-auto" id="navbarNav">
+          <div
+            className={classnames("collapse", "navbar-collapse", "mr-auto", { show: isExpanded })}
+            id="navbarNav"
+          >
             <ul className="navbar-nav">
               {navLinks.map(({ path, name }, i) => {
                 const isSelected = path === routerPath;
                 return (
                   <li className={classnames("nav-item", { active: isSelected })} key={`nav-${i}`}>
                     <Link href={path}>
-                      <a className="nav-link">
+                      <a
+                        className="nav-link"
+                        onClick={() => {
+                          setIsExpanded(false);
+                        }}
+                      >
                         {name} {isSelected && <span className="sr-only">(current)</span>}
                       </a>
                     </Link>
@@ -67,7 +78,7 @@ export default function Header() {
             </ul>
           </div>
           {state?.email && (
-            <div className="navbar-text">
+            <div className="navbar-text navbar-collapse collapse email-link">
               <a href={`mailto:${state.email}`}>{state.email}</a>
             </div>
           )}
